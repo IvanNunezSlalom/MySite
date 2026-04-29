@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Linkedin, Mail } from 'lucide-react';
 import { SITE_CONFIG, NAVIGATION } from '@/lib/constants';
+import WeatherWidget from '@/components/ui/WeatherWidget';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,7 +10,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-90 text-white">
       <div className="container-premium py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* About Column */}
           <div>
             <h3 className="text-h4 font-bold mb-4">{SITE_CONFIG.name}</h3>
@@ -68,6 +69,11 @@ export function Footer() {
               </li>
               <li>{SITE_CONFIG.contact.location}</li>
             </ul>
+          </div>
+
+          {/* Weather Column */}
+          <div>
+            <WeatherWidget />
           </div>
         </div>
 
